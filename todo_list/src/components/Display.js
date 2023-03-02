@@ -29,7 +29,7 @@ const Display = ({list, setList}) => {
         <div>
             {
                 list.map((todo, index)=>(
-                    <h5 className={styled(todo.completed)} key={index}>{todo.num}. {todo.text}  
+                    <h5 className= {`${styled(todo.completed)} fs-5`} key={index}>{todo.num}. {todo.text}  
                     <input className='form-check-input ms-3' type='checkbox' checked={todo.completed} onChange={()=>checkButton(index)}/>
                     <button className='btn btn-danger btn-sm ms-3' onClick={()=>deleteButton(index)}>Delete</button></h5>
                 ))

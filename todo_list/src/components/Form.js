@@ -15,7 +15,9 @@ const Form = ({list, setList, children}) => {
             num:num
         }])
         setTodo("");
-        setNum(num+1)
+        setNum(currentNum => {
+            return currentNum+1
+        })
     };
 
     return (
@@ -30,7 +32,7 @@ const Form = ({list, setList, children}) => {
                 <h1 className='mt-4'>My Todo List:</h1>
                 {
                     list.length === 0 &&
-                    <p>List is Empty! Please Items Add to List!</p>
+                    <p>List is Empty! Please Add Items to List!</p>
                 }
                 {children}
             </div>

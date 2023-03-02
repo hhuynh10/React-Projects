@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios';
 
 const StarwarsAPI = () => {
 
@@ -6,7 +7,7 @@ const StarwarsAPI = () => {
     const [items, setItems] = useState([])
 
     useEffect(()=>{
-        fetch(`https://swapi.dev/api//${API}`)
+        fetch(`https://swapi.dev/api/${API}`)
             .then(response => {
                 return response.json();
             }).then(response => {
@@ -23,7 +24,7 @@ const StarwarsAPI = () => {
             <button className='btn btn-warning btn-sm ms-2' onClick={()=> setAPI('planets')}>Planets</button>
             {
                 items.map((item, index)=> (
-                    <p className='text-light mt-2' key={index}>{item.name}</p>
+                        <p className='text-light mt-3' key={index}>{item.name}</p>
                 ))
             }
         </div>
