@@ -20,6 +20,9 @@ module.exports = {
     },
 
     add:(req, res)=> {
+        if(req.file){
+            Mern.image = req.file.path
+        }
         Mern.create(req.body)
         .then((result)=> {
             res.json(result)

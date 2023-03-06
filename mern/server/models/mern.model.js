@@ -21,7 +21,9 @@ const MernSchema = new mongoose.Schema({
         required: [true, "Description is required!"],
         maxLength: [300, "Description must be less than 300 characters"]
     },
-    image: Array
+    image: {
+        type: String
+    }
 }, {timestamps:true});
 
 MernSchema.path('title').validate(async(title) => {

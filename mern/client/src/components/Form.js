@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import axios from 'axios'
 
 const Form = ({state, setState}) => {
@@ -6,7 +6,8 @@ const Form = ({state, setState}) => {
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
-    const [image, setImage] = useState([])
+    const [image, setImage] = useState(null)
+    const inputRef = useRef()
 
     const [errors, setErrors] = useState({})
     
@@ -22,6 +23,7 @@ const Form = ({state, setState}) => {
             setTitle("")
             setPrice("")
             setDescription("")
+            setImage("")
             setState([...state, res.data]);
         }).catch((err)=> {
             console.log(err)
@@ -54,7 +56,7 @@ const Form = ({state, setState}) => {
 
                 <div>
                     <label className="form-label">Image:</label>
-                    <input type='file' onChange={(e)=>setImage(e.target.files[0])}/>
+                    <input type='file' onChange={()=>setImage(inputRef.current.files[0])} ref = {inputRef}/>
                 </div>
                 
                 <button type="submit" className="btn btn-success mt-3">Submit</button>
