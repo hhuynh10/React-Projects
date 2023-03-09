@@ -33,7 +33,7 @@ const Display = ({state, setState}) => {
                             <h5>Title: {item.title}</h5>
                             <p>Price: {item.price}</p>
                             <p>Description: {item.description}</p>
-                            <p>Image: {item.image}</p>
+                            <img src={`${item.image}`} />
                             <p><button><Link to={`/home/view/${item._id}`}>View</Link></button> <button onClick={()=>deleteHandler(item._id)}>Delete</button></p>
                     </div>
                 ))
