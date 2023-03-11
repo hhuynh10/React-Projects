@@ -22,7 +22,7 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.4 : 0.75}
-        position={isMobile ? [0, -4.25, -1.0] : [0, -4.00, -1.5]}
+        position={isMobile ? [0, -3.75, -0.55] : [0, -3.75, -1.0]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -30,7 +30,6 @@ const Computers = ({ isMobile }) => {
 };
 
 const ComputersCanvas = () => {
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

@@ -27,7 +27,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li 
                 key={link.id} 
-                className={`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
+                className={`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer line`}
                 onClick={() => setActive(link.title)}
               >
                 <a href={`#${link.id}`}>{link.title}</a>
@@ -48,7 +48,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li 
                   key={link.id} 
-                  className={`${active === link.title ? "text-white" : "text-secondary"} font-poppins text-[16px] font-medium cursor-pointer`}
+                  className={`${active === link.title ? "text-white" : "text-secondary"} font-poppins text-[16px] font-medium cursor-pointer line`}
                   onClick={() => {
                     setToggle(!toggle)
                     setActive(link.title)
