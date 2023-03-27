@@ -1,5 +1,6 @@
 import React from 'react'
 import AccountNav from "../AccountNav";
+import {Link, useParams} from "react-router-dom";
 
 const PlacesPage = () => {
     return (
