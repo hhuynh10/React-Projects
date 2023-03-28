@@ -8,20 +8,21 @@ export default function PhotosUploader({addedPhotos,onChange}) {
     
     async function addPhotoByLink(ev) {
         ev.preventDefault();
-        const {data:filename} = await axios.post('/upload-by-link', {link: photoLink});
+        const {data:filename} = await axios.post('/api/upload-by-link', {link: photoLink});
         onChange(prev => {
         return [...prev, filename];
         });
         setPhotoLink('');
-
     }
+
+
     function uploadPhoto(ev) {
         const files = ev.target.files;
         const data = new FormData();
         for (let i = 0; i < files.length; i++) {
         data.append('photos', files[i]);
         }
-        axios.post('/upload', data, {
+        axios.post('/api/upload', data, {
         headers: {'Content-type':'multipart/form-data'}
         }).then(response => {
         const {data:filenames} = response;
@@ -69,6 +70,8 @@ export default function PhotosUploader({addedPhotos,onChange}) {
                 </button>
             </div>
             ))}
+
+
             <label className="h-32 cursor-pointer flex items-center gap-1 justify-center border bg-transparent rounded-2xl p-2 text-2xl text-gray-600">
             <input type="file" multiple className="hidden" onChange={uploadPhoto} />
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
