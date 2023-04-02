@@ -90,9 +90,8 @@ jwt.verify(token, secret, {}, async (err,info) => {
         cover:newPath,
         author:info.id,
     });
-    res.json(postDoc);
-});
-
+        res.json(postDoc);
+    });
 });
 
 app.put('/post',uploadMiddleware.single('file'), async (req,res) => {
