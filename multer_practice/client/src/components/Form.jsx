@@ -32,7 +32,6 @@ const Form = () => {
                 <div>
                     <label className="form-label">Name:</label>
                     <input type="text" className="form-control bg-light" value={name} onChange={(e)=>setName(e.target.value)} />
-                    {errors.name ? <span className='text-danger'>{errors.name.message}</span> : null }<br></br>
                 </div>
 
                 <div>
