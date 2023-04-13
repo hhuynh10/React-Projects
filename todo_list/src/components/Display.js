@@ -26,7 +26,7 @@ const Display = ({list, setList}) => {
     }
 
     return (
-        <div>
+        <div className='flex-start'>
             {
                 list.map((todo, index)=>(
                     <h5 className= {`${styled(todo.completed)} fs-5`} key={index}>{todo.num}. {todo.text}  

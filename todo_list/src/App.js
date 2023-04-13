@@ -3,9 +3,10 @@ import './App.css';
 import Form from './components/Form';
 import {useState} from 'react'
 import Display from './components/Display';
+import { useLocalStorage } from './useLocalStorage';
 
 function App() {
-  const [list, setList] = useState([])
+  const [list, setList] = useLocalStorage("key", [])
   return (
     <div className="App">
       <Form list={list} setList={setList}>
